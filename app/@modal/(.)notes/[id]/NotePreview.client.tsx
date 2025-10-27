@@ -1,6 +1,6 @@
 'use client'
 
-import NewModal from '@/components/NewModal/NewModal'
+import NewModal from '@/components/Modal/NewModal'
 import { useQuery } from '@tanstack/react-query'
 import { getSingleNote } from '@/lib/api'
 import { useRouter } from 'next/navigation'
