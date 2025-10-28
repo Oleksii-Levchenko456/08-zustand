@@ -4,20 +4,20 @@ import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query
 import { Metadata } from "next"
 
 interface GenerateMetaDataProps {
-    params: { slug: string }
+    params: Promise<{ slug: string[] }>
 }
 
 export const generateMetadata = async ({ params }: GenerateMetaDataProps): Promise<Metadata> => {
     const { slug } = await params
 
-    const tag = slug === undefined ? 'All notes' : slug
+    const tag = slug[0] === undefined ? 'All notes' : slug[0]
 
     return {
         title: `Tag: ${tag}`,
-        description: 'Add new tags!',
+        description: `Add new ${tag} note!`,
         openGraph: {
             title: `Tag: ${slug}`,
-            description: 'Add new tags!',
+            description: `Add new ${tag} note!`,
             url: `http://localhost:3000/tag/${slug}`,
             images: [
                 {

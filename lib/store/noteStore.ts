@@ -1,15 +1,19 @@
 import { persist } from "zustand/middleware";
-import { requestBodyData } from "../api";
 import { create } from "zustand";
 
+interface MetaDataType {
+    "title": string,
+    "content": string,
+    "tag": string
+}
 
 type NoteDraftStore = {
-    draft: requestBodyData;
-    setDraft: (note: requestBodyData) => void;
+    draft: MetaDataType;
+    setDraft: (note: MetaDataType) => void;
     clearDraft: () => void;
 };
 
-const initialDraft: requestBodyData = {
+const initialDraft: MetaDataType = {
     title: '',
     content: '',
     tag: 'Todo',
