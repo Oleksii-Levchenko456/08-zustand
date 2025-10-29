@@ -16,9 +16,9 @@ export const generateMetadata = async ({ params }: GenerateMetaDataProps): Promi
         title: `Tag: ${tag}`,
         description: `Add new ${tag} note!`,
         openGraph: {
-            title: `Tag: ${slug}`,
+            title: `Tag: ${tag}`,
             description: `Add new ${tag} note!`,
-            url: `http://localhost:3000/tag/${slug}`,
+            url: `https://08-zustand-one-murex.vercel.app/notes/filter/${tag}`,
             images: [
                 {
                     url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
@@ -30,8 +30,8 @@ export const generateMetadata = async ({ params }: GenerateMetaDataProps): Promi
         },
         twitter: {
             card: 'summary_large_image',
-            title: `Tag: ${slug}`,
-            description: 'Add new tags!',
+            title: `Tag: ${tag}`,
+            description: `Add new ${tag} note!`,
             images: ['https://ac.goit.global/fullstack/react/notehub-og-meta.jpg'],
         },
     }
